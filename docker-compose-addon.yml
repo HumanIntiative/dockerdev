@@ -1,0 +1,12 @@
+version: "3"
+services:
+  redis:
+    image: redis:4.0-alpine
+    container_name: repo-redis
+    ports:
+      - "6379:6379"
+  mongodb:
+    image: mongo:4.0
+    container_name: repo-mongo
+    ports:
+      - "27017:27017"
