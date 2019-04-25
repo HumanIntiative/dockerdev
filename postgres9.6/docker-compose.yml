@@ -1,0 +1,13 @@
+version: "3"
+services:
+  db:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: repo-db
+    environment:
+      - POSTGRES_USER=repo
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=repo_core
+    ports:
+      - "2345:5432"
