@@ -20,6 +20,8 @@ RUN apt install -y libicu-dev && \
 RUN apt install -y libpq-dev && \
     docker-php-ext-configure pgsql --with-pgsql=/usr/local/pgsql && \
     docker-php-ext-install -j$(nproc) pgsql pdo pdo_pgsql
+# -- mysql
+RUN docker-php-ext-install -j$(nproc) mysqli pdo_mysql
 # -- mongodb
 RUN apt install -y libcurl4-openssl-dev pkg-config libssl-dev && \
 	pecl install mongodb && \
