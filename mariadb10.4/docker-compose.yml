@@ -1,0 +1,13 @@
+version: "3"
+services:
+  db:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: repo-db
+    environment:
+      - MYSQL_USER=repo
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=repo_core
+    ports:
+      - "3308:3306"
