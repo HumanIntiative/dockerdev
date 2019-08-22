@@ -9,5 +9,3 @@ services:
       - "81:80"
     volumes:
       - .:/var/www/html
-    links:
-      - db
