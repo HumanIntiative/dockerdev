@@ -28,9 +28,9 @@ RUN apt install -y libcurl4-openssl-dev pkg-config libssl-dev && \
     docker-php-ext-enable mongodb
 # -- ziparchive
 RUN docker-php-ext-install -j$(nproc) zip
-# -- imagick
-RUN apt install -y --fix-missing imagemagick && \
-    docker-php-ext-install -j$(nproc) imagick
+# -- imagick (unused)
+# RUN apt install -y --fix-missing imagemagick && \
+#    docker-php-ext-install -j$(nproc) imagick
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
